@@ -10,7 +10,7 @@
 [Demo](https://www.youtube.com/watch?v=g3J5mf7iiGk)
 
 Friday Night Hardware is a recreation of one of the levels from the browser / standalone game ["Friday Night Funkin'"](https://github.com/ninjamuffin99/Funkin). This was my final project for an Introduction to Embedded Systems course, taken in Spring 2021. The game utilizes many fundamental concepts taught in embedded systems, including state machines, task scheduling, time multiplexing, button debouncing, timer period, and much more.
-# Component + File Guide
+# Components
 The following breadboard components were used to build the game:
 - 2x ATMEGA1284P Processor (+ programmer)
 - LED Matrix
@@ -21,9 +21,10 @@ The following breadboard components were used to build the game:
 - Jumper Cables
 - Power DIP + AC Adapter
 
-# Dependencies
-The game makes usage of the AVR Toolchain and various header files to function properly. Files provided by the instructor are as follows: `pwm.h`, `simAVRHeader.h`, `timer.h`.
+# Dependencies + Build Instructions
+The game makes usage of the AVR Toolchain and various header files to function properly. Files provided by the instructor are as follows: `pwm.h`, `simAVRHeader.h`, `timer.h`. If source code gets uploaded, I will place build instructions here.
 
+# File Guide
 Below are the descriptions of each file. *Italicized* files are not included for reasons denoted in the [Security](#Security) section:
 - **MidiFreq.py**: This script was used to convert the MIDI song into a C-readable format. Specifically, the song is split into a rhythm and melody array. The script makes use of the library [mido](https://github.com/mido/mido) in order to parse the midi file.
 - **gcd.cpp**: This file includes various utility scripts for reducing the memory footprint of the song arrays. Specifically, we use the `findGCD(arr, n)` function to reduce the number by a constant factor. Since mido only gives us on and off notes, offset between notes is also calculated.
